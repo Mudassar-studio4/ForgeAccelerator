@@ -1,4 +1,4 @@
-# BIM360 Visual Reports
+# BIM360 Forge Accelerator
 
 ![Platforms](https://img.shields.io/badge/platform-Windows|MacOS-lightgray.svg)
 [![License](http://img.shields.io/:license-MIT-blue.svg)](http://opensource.org/licenses/MIT)
@@ -24,6 +24,8 @@ This sample is based on the Learn Forge tutorials in the section *View BIM 360 m
 # Setup
 
 ## Prerequisites
+
+Anudeep
 
 1. **BIM 360 Account**: must be Account Admin to add the app integration. [Learn about provisioning](https://forge.autodesk.com/blog/bim-360-docs-provisioning-forge-apps).
 2. **Forge Account**: Learn how to create a Forge Account, activate subscription and create an app at [this tutorial](http://learnforge.autodesk.io/#/account/). 
