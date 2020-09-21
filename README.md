@@ -25,8 +25,6 @@ This sample is based on the Learn Forge tutorials in the section *View BIM 360 m
 
 ## Prerequisites
 
-Durvas
-
 1. **BIM 360 Account**: must be Account Admin to add the app integration. [Learn about provisioning](https://forge.autodesk.com/blog/bim-360-docs-provisioning-forge-apps).
 2. **Forge Account**: Learn how to create a Forge Account, activate subscription and create an app at [this tutorial](http://learnforge.autodesk.io/#/account/). 
 3. **Visual Code** or any other text-based tool.
