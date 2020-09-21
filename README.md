@@ -52,9 +52,9 @@ Mac OSX/Linux (Terminal)
 Windows (use <b>Node.js command line</b> from Start menu)
 
     npm install
-    set FORGE_CLIENT_ID=<<YOUR CLIENT ID FROM FORGE DEVELOPER PORTAL>>
-    set FORGE_CLIENT_SECRET=<<YOUR FORGE CLIENT SECRET>>
-    set FORGE_CALLBACK_URL=<<YOUR CALLBACK URL FROM FORGE DEVELOPER PORTAL>>
+    set FORGE_CLIENT_ID=YNhSwfG4nelURJQqA7LvmE4GGsFFpe0w
+    set FORGE_CLIENT_SECRET=xAsN4qvNwRbNyJAh
+    set FORGE_CALLBACK_URL=http://localhost:3000/api/forge/callback/oauth
     npm run dev
 
 Open the browser: [http://localhost:3000](http://localhost:3000).
