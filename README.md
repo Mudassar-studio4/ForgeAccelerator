@@ -1,4 +1,4 @@
-# BIM360 Visual Reports
+# BIM360 Forge Accelerator
 
 ![Platforms](https://img.shields.io/badge/platform-Windows|MacOS-lightgray.svg)
 [![License](http://img.shields.io/:license-MIT-blue.svg)](http://opensource.org/licenses/MIT)
