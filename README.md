@@ -10,22 +10,17 @@
 
 This sample application demonstrates how to extract properties from elements and generate a project dashboard. Also shows a nested view with 2d views of the model (if available).
 
-This sample is based on the Learn Forge tutorials in the section *View BIM 360 models* and *Dashboard*. The original implementation was based on [Jim Awe - LMVNavTest](https://github.com/JimAwe/LmvNavTest) (Depracated).
-
 ## Thumbnail
 
 ![thumbnail](/thumbnail.png)
 
 ## Live version
 
-[https://bim360reports.autodesk.io](https://bim360reports.autodesk.io/)
-
+## Team members
+Anudeep, Neel, Durvas, Mudassar
 
 # Setup
-
 ## Prerequisites
-
-Anudeep
 
 1. **BIM 360 Account**: must be Account Admin to add the app integration. [Learn about provisioning](https://forge.autodesk.com/blog/bim-360-docs-provisioning-forge-apps).
 2. **Forge Account**: Learn how to create a Forge Account, activate subscription and create an app at [this tutorial](http://learnforge.autodesk.io/#/account/). 
@@ -43,13 +38,6 @@ Clone this project or download it. It's recommended to install [GitHub desktop](
 
 To run it, install the required packages, set the enviroment variables with your client ID & secret and finally start it. Via command line, navigate to the folder where this repository was cloned and use the following:
 
-Mac OSX/Linux (Terminal)
-
-    npm install
-    export FORGE_CLIENT_ID=<<YOUR CLIENT ID FROM FORGE DEVELOPER PORTAL>>
-    export FORGE_CLIENT_SECRET=<<YOUR FORGE CLIENT SECRET>>
-    export FORGE_CALLBACK_URL=<<YOUR CALLBACK URL FROM FORGE DEVELOPER PORTAL>>
-    npm run dev
 
 Windows (use <b>Node.js command line</b> from Start menu)
 
@@ -57,19 +45,9 @@ Windows (use <b>Node.js command line</b> from Start menu)
     set FORGE_CLIENT_ID=YNhSwfG4nelURJQqA7LvmE4GGsFFpe0w
     set FORGE_CLIENT_SECRET=xAsN4qvNwRbNyJAh
     set FORGE_CALLBACK_URL=http://localhost:3000/api/forge/callback/oauth
-    npm run dev
+    npm start
 
 Open the browser: [http://localhost:3000](http://localhost:3000).
-
-**Important:** do not use **npm start** locally, this is intended for PRODUCTION only with HTTPS (SSL) secure cookies.
-
-## Deployment
-
-To deploy this application to Heroku, the **Callback URL** for Forge must use your `.herokuapp.com` address. After clicking on the button below, at the Heroku Create New App page, set your Client ID, Secret and Callback URL for Forge.
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
-Watch [this video](https://www.youtube.com/watch?v=Oqa9O20Gj0c) on how deploy samples to Heroku.
 
 
 ## Packages used
@@ -118,7 +96,6 @@ This sample is licensed under the terms of the [MIT License](http://opensource.o
 Please see the [LICENSE](LICENSE) file for full details.
 
 ## Written by
-
 
 Jaime Rosales D. <br /> 
 [![Twitter Follow](https://img.shields.io/twitter/follow/afrojme.svg?style=social&label=Follow)](https://twitter.com/AfroJme) <br />Forge Partner Development <br />
