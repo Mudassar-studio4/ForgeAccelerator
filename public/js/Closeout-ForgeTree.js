@@ -174,3 +174,22 @@ function showUser() {
     }
   });
 }
+
+function downloadfiles() {
+  jQuery.ajax({
+    url: urns,
+    success: function (profile) {
+      $('#downloadfiles').click(function () {
+        
+      }
+    );
+  }
+ }
+
+//
+//$('#downloadfiles').click(function () {
+
+ //     console.log(urns)
+      
+ //   }
+  )}
