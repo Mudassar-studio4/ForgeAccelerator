@@ -46,6 +46,7 @@ $(document).ready(function () {
     }
   });
 
+
   jQuery.ajax({
     url: '/api/forge/clientId',
     success: function (res) {
@@ -66,7 +67,10 @@ $(document).ready(function () {
     });
   })
 });
-
+var haveBIM360Hub = false;
+var previousUrn = 0;
+var baseurn = '';
+var urns = [];
 function prepareUserHubsTree() {
   $('#userHubs').jstree({
     'core': {
@@ -82,9 +86,13 @@ function prepareUserHubsTree() {
         }
       }
     },
+    'checkbox' : {
+      'tie_selection': false,
+      "three_state": false,
+      'whole_node': false
+    },
     'types':
-    
-    {
+        {
       'default': { 'icon': 'glyphicon glyphicon-question-sign' },
       '#': { 'icon': 'glyphicon glyphicon-user' },
       'hubs': { 'icon': 'https://github.com/Autodesk-Forge/bim360appstore-data.management-nodejs-transfer.storage/raw/master/www/img/a360hub.png' },
@@ -98,6 +106,7 @@ function prepareUserHubsTree() {
       'versions': { 'icon': 'glyphicon glyphicon-time' },
       'unsupported': { 'icon': 'glyphicon glyphicon-ban-circle' }
     },
+    
     "sort": function (a, b) {
       var a1 = this.get_node(a);
       var b1 = this.get_node(b);
@@ -110,19 +119,48 @@ function prepareUserHubsTree() {
       else if (a1.type !== b1.type) return a1.icon < b1.icon ? 1 : -1; // types are different inside folder, so sort by icon (files/folders)
       else return a1.text > b1.text ? 1 : -1; // basic name/text sort
     },
-    "plugins": ["types", "state", "sort"],
+    "plugins": ["types", "checkbox", "state", "sort"],
     "state": { "key": "autodeskHubs" }// key restore tree state
-  }).bind("activate_node.jstree", function (evt, data) {
-    if (data != null && data.node != null && (data.node.type == 'versions' || data.node.type == 'bim360documents')) {
-      // in case the node.id contains a | then split into URN & viewableId
-      if (data.node.id.indexOf('|') > -1) {
-        var urn = data.node.id.split('|')[1];
-        var viewableId = data.node.id.split('|')[2];
-        launchViewer(urn, viewableId);
+
+}).bind("select_node.jstree", function (evt, data) {
+  if (!data || !data.node) return;
+  if (data.node.type == 'items')
+    data.node = $('#userHubs').jstree(true).get_node(data.node.children[0]);
+
+  if (data.node.type == 'versions') {
+    if (data.node.id === 'not_available') { alert('No viewable available for this version'); return; }
+
+    baseurn  = data.node.id;
+    var filename = $('#userHubs').jstree(true).get_node(data.node.parent).text;
+    var fileType = data.node.original.fileType;
+
+    if (fileType == null || baseurn == null || previousUrn == baseurn) return;
+    launchViewer(baseurn, filename, fileType);
+    previousUrn = baseurn;
+    $.notify("loading... " + filename, { className: "info", position:"bottom right" });
+  }
+}).bind("check_node.jstree", function (evt, data) {
+  console.log('check_node.jstree')
+    console.log(data)
+    var urn = data.node.id;
+    urns.push(urn)
+    
+}).bind("uncheck_node.jstree", function (evt, data) {
+  launchViewer(baseurn)
+  console.log('check_node.jstree')
+    console.log(data)
+    var urn = data.node.id;
+    for( var i = 0; i < urns.length; i++){ 
+      if ( urns[i] === urn) {
+        urns.splice(i, 1); 
       }
-      else {
-        launchViewer(data.node.id);
+    }
+    for( var i = 0; i < urns.length; i++){ 
+      var timer = 100;
+      if (i !== 0) {
+        timer = timer*i
       }
+     
     }
   });
 }
