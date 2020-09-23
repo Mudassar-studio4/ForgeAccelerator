@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>BIM 360 Visual Reports Sample - Autodesk Forge</title>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon"
+    href="https://github.com/Autodesk-Forge/learn.forge.viewhubmodels/raw/master/img/favicon.ico">
+  <!-- Common packages: jQuery, Bootstrap, jsTree -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jstree/3.3.7/jstree.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jstree/3.3.7/themes/default/style.min.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+  <!-- Autodesk Forge Viewer files -->
+  <link rel="stylesheet" href="https://developer.api.autodesk.com/modelderivative/v2/viewers/7.*/style.min.css"
+    type="text/css">
+  <script src="https://developer.api.autodesk.com/modelderivative/v2/viewers/7.*/viewer3D.min.js"></script>
+  <!-- this project files -->
+  <link href="css/main.css" rel="stylesheet" />
+
+
+  
+  <!-- 2D Viewer extension (NestedViewer) -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/autodesk-forge/forge-extensions/public/extensions/NestedViewerExtension/contents/main.css">
+  <script src="//cdn.jsdelivr.net/gh/autodesk-forge/forge-extensions/public/extensions/NestedViewerExtension/contents/main.js"></script>
+</head>
+<body>
+  <!-- Fixed navbar by Bootstrap: https://getbootstrap.com/examples/navbar-fixed-top/ -->
+  <ul class="nav nav-tabs">
+    <li><a href="./index.html">Signin</a></li>
+    <li><a href="./documentlist.html">Document List</a></li>
+    <li><a href="./BIM360.html">BIM360</a></li>
+    <li><a href="./Closeout.html">Closeout</a></li>
+    <li class="active"><a href="#">FORMS</a></li>
+  </ul>
+  <div class="container-fluid fill">
+    <div class="row fill">
+      <div class="col-sm-4 fill">
+        <div class="panel panel-default fill">
+          <div class="panel-heading" data-toggle="tooltip" style="padding: 0px;">
+            <span id="userInfo"></span>
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Department
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="#">Architecture</a></li>
+                <li><a href="#">Structure</a></li>
+                <li><a href="#">Mechanical</a></li>
+                <li><a href="#">Electrical</a></li>
+                <li><a href="#">Plumbing</a></li>
+                <li><a href="#">Fire Fighting</a></li>
+                <li><a href="#">Estimation</a></li>
+                <li><a href="#">Contracts</a></li>
+                <li><a href="#">Billing</a></li>
+                <li><a href="#">Projects/ Engineering</a></li>
+                <li><a href="#">Procurement</a></li>
+                <li><a href="#">Interior</a></li>
+                <li><a href="#">Landscape</a></li>
+                <div class="dropdown">
+                  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Type of Form
+                  <span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Pre-Work</a></li>
+                    <li><a href="#">Construction Works</a></li>
+                    <li><a href="#">Equipment</a></li>
+                    <li><a href="#">Emergency Tools</a></li>
+                    <li><a href="#">Certification</a></li>
+                    <span id="userInfo"></span>
+                    <div class="dropdown">
+                      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Form
+                      <span class="caret"></span></button>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">Quality</a></li>
+                        <li><a href="#">Safety</a></li>
+                        <li><a href="#">Commissioning</a></li>
+                        <li><a href="#">Punch List</a></li>
+                        <li><a href="#">Project Charter</a></li>
+                        <li><a href="#">Construction Plan</a></li>
+                        <li><a href="#">Bill of Quantities</a></li>
+                        <li><a href="#">Contracts and Ammendments</a></li>
+                        <li><a href="#">Bills</a></li>
+                        <li><a href="#">Material Requisition</a></li>
+                        <li><a href="#">Audit</a></li>
+                        <li><a href="#">Project Rooster</a></li>
+                        <li><a href="#">Log Book</a></li>
+                        <li><a href="#">Store</a></li>
+              </ul>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>
