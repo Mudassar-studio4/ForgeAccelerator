@@ -19,12 +19,12 @@ body {
 
 #userHubs {
   overflow: auto;
-  width: 100%;
+  resize: both;
   height: calc(100vh - 115px);
 }
 
 #forgeViewer {
-  width: 100%;
+  resize: both;
 }
 
 #dashboard {
@@ -33,7 +33,7 @@ body {
 }
 
 .dashboardPanel {
-  width: 100%;
+  resize: both;
   padding: 3%;
   display: block;
 }

@@ -21,10 +21,10 @@
   <script src="https://developer.api.autodesk.com/modelderivative/v2/viewers/7.*/viewer3D.min.js"></script>
   <!-- this project files -->
   <link href="css/main.css" rel="stylesheet" />
-  <script src="js/dataextension.js"></script>
+  
   <script src="js/Closeout-ForgeViewer.js"></script>
   <script src="js/Closeout-ForgeTree.js"></script>
-  <script src="js/dataextension.js"></script>
+ 
 
   
   <!-- 2D Viewer extension (NestedViewer) -->
@@ -42,7 +42,7 @@
   </ul>
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
-      <div style="float: left; margin-top: 5px;">
+      <div style="float: left; margin-top: 5px;"
 
         <img alt="Autodesk Forge" src="/img/bim360.png" height="40"> Studio4
       </div>
@@ -55,7 +55,7 @@
     </div>
   </nav>
   <!-- End of navbar -->
-  <div class="container-fluid fill">
+  <div   class="container-fluid fill">
     <div class="row fill">
       <div class="col-sm-4 fill">
         <div class="panel panel-default fill">
@@ -81,13 +81,15 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-8 fill">
+
+      <!--  
+       <div class="col-sm-8 fill">
         <div id="forgeViewer"></div>
       </div>
-    </div>
-  </div>
+    </div>  
+  </div>-->
   <!-- Modal Provision BIM360  -->
-  <div class="modal fade" id="provisionAccountModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <!--<div class="modal fade" id="provisionAccountModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -126,6 +128,8 @@
       </div>
     </div>
   </div>
+-->
+
   <!-- Modal Provision BIM360 Help  -->
   <div class="modal fade" id="provisionAccountStepsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog modal-lg" role="document">
@@ -184,9 +188,17 @@
       </div>
     </div>
   </div>
-  <script>
-    new Clipboard('.input-group-addon');
+
+  <!-- Download buttons  -->
+  <div
+    button type="button" class="btn btn-primary btn-lg" onclick="downloadfiles()">Download Files</button>
+<!-- <script>
+  function downloadfiles() {
+    console.log(urns);
+  }
   </script>
+-->
+</div>
 </body>
 <iframe id="hiddenFrame" style="visibility: hidden; display: none" />
 
