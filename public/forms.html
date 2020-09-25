@@ -29,6 +29,18 @@
   <script src="//cdn.jsdelivr.net/gh/autodesk-forge/forge-extensions/public/extensions/NestedViewerExtension/contents/main.js"></script>
 </head>
 <body>
+
+  
+<script>
+  function myFunction() {
+    <a href="./form-projectcharter.html" 
+      target="popup" 
+      onclick="window.open('http://localhost:3000/form-projectcharter.html','popup','width=600,height=600'); return false;">
+      </a>  
+  }
+  </script>
+
+
   <!-- Fixed navbar by Bootstrap: https://getbootstrap.com/examples/navbar-fixed-top/ -->
   <ul class="nav nav-tabs">
     <li><a href="./index.html">Signin</a></li>
@@ -79,7 +91,7 @@
                     <li><a href="#">Safety</a></li>
                     <li><a href="#">Commissioning</a></li>
                     <li><a href="#">Punch List</a></li>
-                    <li><a href="./form-projectcharter.html">Project Charter</a></li>
+                    <li><a target="popup" scrollbars=yes onclick="window.open('http://localhost:3000/form-projectcharter.html','popup','width=600,height=800'); return false;">Project Charter</a></li>
                     <li><a href="#">Construction Plan</a></li>
                     <li><a href="#">Bill of Quantities</a></li>
                     <li><a href="#">Contracts and Ammendments</a></li>
@@ -91,10 +103,15 @@
                     <li><a href="#">Store</a></li>
                   </ul>
               </div>
+                </a>
           </div>
         </div>
       </div>
     </div>
+
+  
+
+
 
 </body>
 </html>
