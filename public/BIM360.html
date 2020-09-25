@@ -85,17 +85,53 @@
         </div>
       </div>
 
-      <div class="col-sm-3">
-        <div id="upload files"></div>
-        <div>
-            <button type="button" class="btn btn-secondary btn-lg">upload Files</button>
-        </div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter" margin=5px>
+Upload Files
+</button>
+
+<script>
+  function relocate_home()
+  {
+       location.href = "http://localhost:3000/forms.html";
+  } 
+  </script>
+  
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Choose a Checklist Type</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <div class="col-sm-8 fill">
-        <div id="forgeViewer"></div>
+      <div class="modal-body">
+        
+<div style="text-align: center; font-size:xx-large;">Checklist Types</div>
+
+<form>
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Select A Checklist</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option id="Piling by Hydraulic Rotary Machine">Piling by Hydraulic Rotary Machine</option>
+          <option >Project Charter</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="relocate_home()">Save changes</button>
       </div>
     </div>
-  
+  </div>
+</div>
+
 
   <!-- Modal Provision BIM360  -->
   <div class="modal fade" id="provisionAccountModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
