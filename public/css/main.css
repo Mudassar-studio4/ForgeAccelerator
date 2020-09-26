@@ -25,6 +25,12 @@ body {
 
 #forgeViewer {
   resize: both;
+  overflow: auto;
+}
+
+#forge123 {
+  resize: both;
+  overflow: auto;
 }
 
 #dashboard {
