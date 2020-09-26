@@ -29,6 +29,18 @@
   <script src="//cdn.jsdelivr.net/gh/autodesk-forge/forge-extensions/public/extensions/NestedViewerExtension/contents/main.js"></script>
 </head>
 <body>
+
+  
+<script>
+  function myFunction() {
+    <a href="./form-projectcharter.html" 
+      target="popup" 
+      onclick="window.open('http://localhost:3000/form-projectcharter.html','popup','width=600,height=600'); return false;">
+      </a>  
+  }
+  </script>
+
+
   <!-- Fixed navbar by Bootstrap: https://getbootstrap.com/examples/navbar-fixed-top/ -->
   <ul class="nav nav-tabs">
     <li><a href="./index.html">Signin</a></li>
@@ -44,7 +56,7 @@
           <div class="panel-heading" data-toggle="tooltip" style="padding: 0px;">
             <span id="Checklists"></span>
             <div class="dropdown">
-              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Department
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"style="margin-top: 5px">Department
               <span class="caret"></span></button>
               <ul class="dropdown-menu">
                 <li><a href="#">Architecture</a></li>
@@ -62,7 +74,7 @@
                 <li><a href="#">Landscape</a></li>
             </div>
             <div class="dropdown">
-              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Type of Form
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"style="margin-top: 5px">Type of Form
               <span class="caret"></span></button>
               <ul class="dropdown-menu">
                 <li><a href="#">Pre-Work</a></li>
@@ -72,14 +84,14 @@
                 <li><a href="#">Certification</a></li>
               </div>
                 <div class="dropdown">
-                  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Form
+                  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"style="margin-top: 5px">Select Form
                   <span class="caret"></span></button>
                   <ul class="dropdown-menu">
                     <li><a href="#">Quality</a></li>
                     <li><a href="#">Safety</a></li>
                     <li><a href="#">Commissioning</a></li>
                     <li><a href="#">Punch List</a></li>
-                    <li><a href="#">Project Charter</a></li>
+                    <li><a target="popup" scrollbars=yes onclick="window.open('http://localhost:3000/form-projectcharter.html','popup','width=600,height=800'); return false;">Project Charter</a></li>
                     <li><a href="#">Construction Plan</a></li>
                     <li><a href="#">Bill of Quantities</a></li>
                     <li><a href="#">Contracts and Ammendments</a></li>
@@ -91,10 +103,15 @@
                     <li><a href="#">Store</a></li>
                   </ul>
               </div>
+                </a>
           </div>
         </div>
       </div>
     </div>
+
+  
+
+
 
 </body>
 </html>

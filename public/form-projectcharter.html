@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>BIM 360 Visual Reports Sample - Autodesk Forge</title>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon"
+    href="https://github.com/Autodesk-Forge/learn.forge.viewhubmodels/raw/master/img/favicon.ico">
+  <!-- Common packages: jQuery, Bootstrap, jsTree -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jstree/3.3.7/jstree.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jstree/3.3.7/themes/default/style.min.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+  <!-- Autodesk Forge Viewer files -->
+  <link rel="stylesheet" href="https://developer.api.autodesk.com/modelderivative/v2/viewers/7.*/style.min.css"
+    type="text/css">
+  <script src="https://developer.api.autodesk.com/modelderivative/v2/viewers/7.*/viewer3D.min.js"></script>
+  <!-- this project files -->
+  <link href="css/main.css" rel="stylesheet" />
+  
+  <script src="js/documentlist-ForgeViewer.js"></script>
+  <script src="js/documentlist-ForgeTree.js"></script>
+ 
+
+  
+  <!-- 2D Viewer extension (NestedViewer) -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/autodesk-forge/forge-extensions/public/extensions/NestedViewerExtension/contents/main.css">
+  <script src="//cdn.jsdelivr.net/gh/autodesk-forge/forge-extensions/public/extensions/NestedViewerExtension/contents/main.js"></script>
+</head>
+
+<body>
+    <div style="text-align: center; font-size:xx-large;">Project Charter</div>
+<form>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputProjectName4"></label><b>Project Name</b></label>
+        <input type="projectname" class="form-control" id="inputProjectName4" placeholder="Forge Accelerator">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputClientName4"><b>Client Name</b></label>
+        <input type="ClientName" class="form-control" id="inputClientName4" placeholder="S4 Pvt Ltd">
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputProjectLocation">Project Location</label>
+      <input type="text" class="form-control" id="inputProjectLocation" placeholder="Mumbai">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputProjectAddress">Project Address</label>
+      <input type="text" class="form-control" id="inputProjectAddress" placeholder="">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputDevelopers Name">Developer Name</label>
+        <input type="text" class="form-control" id="inputDevelopers Name">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputCapacity">Capacity</label>
+        <select id="inputCapacity" class="form-control">
+          <option selected>Choose...</option>
+          <option>AC</option>
+          <option>DC</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputProjectManager">Project Manager</label>
+        <input type="text" class="form-control" id="inputProjectManager" placeholder="Name and Organization">
+      </div>
+    </div>
+    <div class="custom-file col-md-6">
+        <input type="file" class="customx-file-input" id="customFile">
+        <label class="custom-file-label" for="customFile"></label>
+      </div>
+    <div class="form-group">
+      <div class="form-check col-md-6">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          I agree and accept the above filled information
+        </label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit Form</button>
+  </form>
+</body>
+</html>
