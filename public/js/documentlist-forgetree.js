@@ -17,6 +17,8 @@
 /////////////////////////////////////////////////////////////////////
 
 $(document).ready(function () {
+  console.log("Hi Durvas here");
+
   // first, check if current visitor is signed in
   jQuery.ajax({
     url: '/api/forge/oauth/token',
@@ -24,7 +26,6 @@ $(document).ready(function () {
       // yes, it is signed in...
       $('#signOut').show();
       $('#refreshHubs').show();
-
       // prepare sign out
       $('#signOut').click(function () {
         $('#hiddenFrame').on('load', function (event) {
@@ -68,6 +69,7 @@ $(document).ready(function () {
 });
 
 function prepareUserHubsTree() {
+  console.log("Prepare tree");
   $('#userHubs').jstree({
     'core': {
       'themes': { "icons": true },
@@ -78,7 +80,7 @@ function prepareUserHubsTree() {
         'cache': false,
         'data': function (node) {
           $('#userHubs').jstree(true).toggle_node(node);
-          return { "id": node.id };
+          return { "id": node.id };      
         }
       }
     },
@@ -113,11 +115,13 @@ function prepareUserHubsTree() {
     "plugins": ["types", "state", "sort"],
     "state": { "key": "autodeskHubs" }// key restore tree state
   }).bind("activate_node.jstree", function (evt, data) {
+    console.log(data);
     if (data != null && data.node != null && (data.node.type == 'versions' || data.node.type == 'bim360documents')) {
       // in case the node.id contains a | then split into URN & viewableId
       if (data.node.id.indexOf('|') > -1) {
         var urn = data.node.id.split('|')[1];
         var viewableId = data.node.id.split('|')[2];
+        var hubid = data.node.id.split()
         launchViewer(urn, viewableId);
       }
       else {
