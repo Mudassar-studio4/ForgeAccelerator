@@ -17,6 +17,7 @@
 /////////////////////////////////////////////////////////////////////
 
 $(document).ready(function () {
+  $('#forge123').hide();
   console.log("Hi Durvas here");
 
   // first, check if current visitor is signed in
@@ -115,18 +116,19 @@ function prepareUserHubsTree() {
     "plugins": ["types", "state", "sort"],
     "state": { "key": "autodeskHubs" }// key restore tree state
   }).bind("activate_node.jstree", function (evt, data) {
-    console.log(data);
-    if (data != null && data.node != null && (data.node.type == 'versions' || data.node.type == 'bim360documents')) {
+    //console.log(data);
+    if (data != null && data.node != null && data.node.type == 'items') {
       // in case the node.id contains a | then split into URN & viewableId
-      if (data.node.id.indexOf('|') > -1) {
-        var urn = data.node.id.split('|')[1];
-        var viewableId = data.node.id.split('|')[2];
-        var hubid = data.node.id.split()
-        launchViewer(urn, viewableId);
-      }
-      else {
-        launchViewer(data.node.id);
-      }
+        var projectid = data.node.id.split('/')[6];
+        //console.log(projectid);
+        var urn = data.node.id.split('/')[8];
+        //console.log(urn);
+        var documentnumber = data.node.text;
+        console.log(documentnumber);
+        launchViewer(urn, projectid, documentnumber);
+    }
+    else{
+      $('#forge123').hide();
     }
   });
 }

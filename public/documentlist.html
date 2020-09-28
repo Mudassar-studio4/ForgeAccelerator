@@ -89,8 +89,16 @@
               <label for="test"></label>
             </div>
             <div class="form-group">
+              <label for="ProjectID">Project ID</label>
+              <input type="text" class="form-control" id="ProjectID" name="ProjectID" readonly>
+            </div>
+            <div class="form-group">
+              <label for="URN">URN</label>
+              <input type="text" class="form-control" id="URN" name="URN" readonly>
+            </div>
+            <div class="form-group">
               <label for="DocumentNumber">Document Number</label>
-              <input type="text" class="form-control" id="DocumentNumber" name="DocumentNumber">
+              <input type="text" class="form-control" id="DocumentNumber" name="DocumentNumber" readonly>
             </div>
             <div class="form-group">
               <label for="Department">Department</label>
@@ -161,7 +169,7 @@
               <input type="text" class="form-control" id="GFCStatus" name="GFCStatus">
             </div>
             <div>
-              <button type="submit" class="btn btn-default">Submit</button>
+              <button type="submit" class="btn btn-default" onclick="insertmdl()">Submit</button>
             </div>
             <div class="form-group">
               <label for="test"></label>
