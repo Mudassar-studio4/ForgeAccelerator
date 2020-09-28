@@ -33,6 +33,23 @@
 </head>
 
 <body>
+  <script>
+    function insertmdl() {
+  var MongoClient = require('mongodb').MongoClient;
+  var url = "mongodb://localhost:27017/";
+  
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("mdl");
+    var myobj = { Project_ID: projectid, URN: urn, Document:documentnumber };
+    dbo.collection("master").insertOne(myobj, function(err, res) {
+      if (err) throw err;
+      console.log("1 document inserted");
+      db.close();
+    });
+  });
+}
+  </script>
   <!-- Fixed navbar by Bootstrap: https://getbootstrap.com/examples/navbar-fixed-top/ -->
   <ul class="nav nav-tabs">
     <li><a href="./index.html">Signin</a></li>
@@ -169,7 +186,7 @@
               <input type="text" class="form-control" id="GFCStatus" name="GFCStatus">
             </div>
             <div>
-              <button type="submit" class="btn btn-default" onclick="insertmdl">Submit</button>
+              <button type="button" class="btn btn-default" onclick="insertmdl()">Submit</button>
             </div>
             <div class="form-group">
               <label for="test"></label>
