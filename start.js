@@ -18,6 +18,7 @@
 
 const path = require('path');
 const express = require('express');
+const mongo = require('mongodb');
 const cookieSession = require('cookie-session');
 
 const PORT = process.env.PORT || 3000;
@@ -38,6 +39,7 @@ app.use(express.json({ limit: '50mb' }));
 app.use('/api/forge', require('./routes/oauth'));
 app.use('/api/forge', require('./routes/datamanagement'));
 app.use('/api/forge', require('./routes/user'));
+app.use('/mongodb', require('./routes/mongo'));
 app.use((err, req, res, next) => {
     console.error(err);
     res.status(err.statusCode).json(err);

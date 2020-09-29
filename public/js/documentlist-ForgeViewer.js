@@ -10,7 +10,7 @@ function getParameterByName(name, url) {
   name = name.replace(/[\[\]]/g, '\\$&');
   var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
     results = regex.exec(url);
-    console.log(results);
+    //console.log(results);
   if (!results) return null;
   if (!results[2]) return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
@@ -27,18 +27,5 @@ function launchViewer(urn, projectid, documentnumber) {
   document.getElementById("DocumentNumber").value = documentnumber;
 }
 
-function insertmdl() {
-  var MongoClient = require('mongodb').MongoClient;
-  var url = "mongodb://localhost:27017/";
-  
-  MongoClient.connect(url, function(err, db) {
-    if (err) throw err;
-    var dbo = db.db("mdl");
-    var myobj = { Project_ID: projectid, URN: urn, Document:documentnumber };
-    dbo.collection("master").insertOne(myobj, function(err, res) {
-      if (err) throw err;
-      console.log("1 document inserted");
-      db.close();
-    });
-  });
-}
+
+

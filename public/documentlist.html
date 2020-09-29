@@ -24,9 +24,7 @@
   
   <script src="js/documentlist-ForgeViewer.js"></script>
   <script src="js/documentlist-ForgeTree.js"></script>
- 
-
-  
+   
   <!-- 2D Viewer extension (NestedViewer) -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/autodesk-forge/forge-extensions/public/extensions/NestedViewerExtension/contents/main.css">
   <script src="//cdn.jsdelivr.net/gh/autodesk-forge/forge-extensions/public/extensions/NestedViewerExtension/contents/main.js"></script>
@@ -34,21 +32,40 @@
 
 <body>
   <script>
-    function insertmdl() {
-  var MongoClient = require('mongodb').MongoClient;
-  var url = "mongodb://localhost:27017/";
-  
-  MongoClient.connect(url, function(err, db) {
-    if (err) throw err;
-    var dbo = db.db("mdl");
-    var myobj = { Project_ID: projectid, URN: urn, Document:documentnumber };
-    dbo.collection("master").insertOne(myobj, function(err, res) {
-      if (err) throw err;
-      console.log("1 document inserted");
-      db.close();
-    });
+    function insertdb() {
+    var myobj ={'Project ID':document.getElementById("ProjectID").value, 
+    'URN': document.getElementById("URN").value,
+    'Document Number':document.getElementById("DocumentNumber").value,
+    'Department':document.getElementById("Department").value,
+    'Responsible': document.getElementById("Responsible").value,
+    'Cost Sheet': document.getElementById("CostSheet").value,
+    'Document Description': document.getElementById("DocumentDescription").value,
+    'Category 1': document.getElementById("Category1").value,
+    'Critical Document?': document.getElementById("CriticalDocument").value,
+    'Inter Discipline Document?': document.getElementById("InterDisciplineDocument").value,
+    'Document Group': document.getElementById("DocumentGroup").value,
+    'Proposed Submission Date': document.getElementById("ProposedSubmissionDate").value,
+    'Forecast Date': document.getElementById("ForecastDate").value,
+    'Document Status': document.getElementById("DocumentStatus").value,
+    'Remarks': document.getElementById("Remarks").value,
+    'Criticality': document.getElementById("Criticality").value,
+    'Procurement Depedent': document.getElementById("ProcurementDepedent").value,
+    'GFC Issued Date': document.getElementById("GFCIssuedDate").value,
+    'Category 2': document.getElementById("Category2").value,
+    'GFC Status': document.getElementById("GFCStatus").value
+  };
+  //console.log(myobj);
+  jQuery.ajax({
+    url: '/mongodb/insert',
+    data: myobj,
+    success: function(res) {
+    console.log(res);
+    db.close();
+    },
+    error: function(req, err){ console.log('my message' + err); }
   });
 }
+
   </script>
   <!-- Fixed navbar by Bootstrap: https://getbootstrap.com/examples/navbar-fixed-top/ -->
   <ul class="nav nav-tabs">
@@ -186,7 +203,7 @@
               <input type="text" class="form-control" id="GFCStatus" name="GFCStatus">
             </div>
             <div>
-              <button type="button" class="btn btn-default" onclick="insertmdl()">Submit</button>
+              <button type="button" class="btn btn-default" onclick="insertdb()">Submit</button>
             </div>
             <div class="form-group">
               <label for="test"></label>

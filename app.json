@@ -9,7 +9,8 @@
     "autodesk",
     "forge",
     "template",
-    "bim360appstore"
+    "bim360appstore",
+    "mongodb"
   ],
   "env": {
     "FORGE_CLIENT_ID": {
